@@ -54,6 +54,3 @@ http://localhost:3000
 🔑 Add user authentication (NextAuth/JWT)
 
 💳 Payment gateway integration (Stripe/Razorpay)
-
-📄 License
-This project is licensed under the MIT License – feel free to use and modify.
