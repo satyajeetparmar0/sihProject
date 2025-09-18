@@ -9,10 +9,18 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "@react-google-maps/api": "^2.20.7",
+    "axios": "^1.12.2",
+    "dotenv": "^17.2.2",
+    "i18next": "^25.5.2",
     "next": "15.4.5",
+    "next-i18next": "^15.4.2",
+    "prisma": "^6.13.0",
     "react": "19.1.0",
     "react-countdown": "^2.3.6",
-    "react-dom": "19.1.0"
+    "react-dom": "19.1.0",
+    "react-i18next": "^15.7.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -1,53 +1,68 @@
+
+
 "use client";
 import React, { useEffect, useState } from "react";
 
 type Props = {
-    price: number;
+    monasteryName: string;
     id: number;
-    options?: {title: string; additionalPrice: number}[]
+    visitingHours?: string;
+    virtualTourAvailable?: boolean;
 }
 
-const Price = ({price, id, options}: Props) => {
-    const [total, setTotal] = useState(price);
-    const [quantity, setQuantity] = useState(1);
-    const [selected, setSelected] = useState(0);
+const MonasteryVisit = ({monasteryName, id, visitingHours, virtualTourAvailable}: Props) => {
+    const [visitDuration, setVisitDuration] = useState(2);
+    const [visitType, setVisitType] = useState(0);
+
+    const visitOptions = [
+        {title: "Quick Visit", duration: 1},
+        {title: "Standard Tour", duration: 2},
+        {title: "Detailed Exploration", duration: 4}
+    ];
 
     useEffect(()=>{
-        setTotal(
-            quantity * (options ? price + options[selected].additionalPrice : price)
-        );
-    },[quantity, selected, options, price]);
+        setVisitDuration(visitOptions[visitType].duration);
+    },[visitType]);
 
     return(
         <div className="flex flex-col gap-4">
-            <h2 className="text-2xl font-bold">${total.toFixed(2)}</h2>
-            {/* OPTIONS CONTAINER */}
+            <h2 className="text-xl font-bold text-orange-600">{visitDuration} Hour Visit</h2>
+            {/* VISIT TYPE CONTAINER */}
             <div className="flex gap-4">
-                {options?.map((option, index)=>(
-                    <button key={option.title} className="p-2 ring-1 ring-red-400 rounded-md min-w-[6rem]" style={{
-                        background: selected === index ? "rgb(248 113 113)" : "white",
-                        color: selected === index ? "white" : "red"                }}
-                            onClick={()=>setSelected(index)}>
+                {visitOptions?.map((option, index)=>(
+                    <button key={option.title} className="p-2 ring-1 ring-orange-400 rounded-md min-w-[6rem]" style={{
+                        background: visitType === index ? "rgb(251 146 60)" : "white",
+                        color: visitType === index ? "white" : "orange"                }}
+                            onClick={()=>setVisitType(index)}>
                         {option.title}
                     </button>
                 ))}
             </div>
-            {/* QUANTITY CONTAINER and ADD BUTTON CONTAINER */}
+            {/* VISIT DETAILS and ADD BUTTON CONTAINER */}
             <div className="flex justify-between items-center">
-            {/* QUANTITY CONTAINER */}
-                <div className="flex justify-between w-full p-3 ring-1 ring-red-500">
-                    <span>Quantity</span>
+            {/* VISIT DETAILS CONTAINER */}
+                <div className="flex justify-between w-full p-3 ring-1 ring-orange-500">
+                    <span>Visit Duration</span>
                     <div className="flex gap-4 items-center">
-                        <button onClick={()=>setQuantity((prev)=> prev > 1 ? prev-1 : 1)}>{'<'}</button>
-                        <span>{quantity}</span>
-                        <button onClick={()=>setQuantity((prev) => prev < 9 ? prev + 1 : 9)}>{'>'}</button>
+                        <button onClick={()=>setVisitType((prev)=> prev > 0 ? prev-1 : 0)}>{'<'}</button>
+                        <span>{visitDuration} hours</span>
+                        <button onClick={()=>setVisitType((prev) => prev < 2 ? prev + 1 : 2)}>{'>'}</button>
                     </div>
                 </div>
-                {/* CART BUTTON */}
-                <button className="uppercase bg-red-500 text-white p-3 ring-1 ring-red-500">Add to Cart</button>
+                {/* ADD TO VISIT PLAN BUTTON */}
+                <button className="uppercase bg-orange-600 text-white p-3 ring-1 ring-orange-500 hover:bg-orange-700 transition-colors">
+                    Add to Visit Plan
+                </button>
             </div>
+            {virtualTourAvailable && (
+                <div className="mt-2">
+                    <button className="w-full bg-teal-600 text-white p-2 rounded-md hover:bg-teal-700 transition-colors">
+                        Start Virtual Tour
+                    </button>
+                </div>
+            )}
         </div>
     )
 }
 
-export default Price;
+export default MonasteryVisit;
