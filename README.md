@@ -1,56 +1,87 @@
-🍔 Food Delivery App (Frontend)
-A responsive Food Delivery Web Application built with Next.js and Tailwind CSS, featuring a modern UI for browsing food items, managing a cart, and placing orders (UI simulation only).
+🏯 Digitize & Showcase Monasteries of Sikkim
 
-Note: This version is frontend-only. It does not include backend or database integration.
+Smart India Hackathon 2025 – Problem Statement ID: SIH25061
+
+📌 Overview
+
+This project aims to create a centralized digital platform that showcases the monasteries of Sikkim, combining tourism, cultural preservation, and education. The platform provides virtual monastery tours (360°/AR/VR), digitized cultural archives, and integrates with the tourism ecosystem to promote Sikkim globally as a spiritual destination.
 
 🚀 Features
-📱 Responsive Design – Works seamlessly on desktop, tablet, and mobile
 
-🍕 Menu Listing – Display of food items with images, names, and prices
+📸 Virtual Tours – 360° views and AR/VR monastery experiences.
 
-🛒 Cart Functionality – Add/remove items from the cart (client-side state)
+🏯 Cultural Preservation – Digitized manuscripts, artifacts, oral histories.
 
-🖼️ Optimized Images – Next.js Image component for fast loading
+🌍 Tourism Integration – Routes, accommodations, travel guides.
 
-🎨 Modern Styling – Tailwind CSS for clean, maintainable styles
+🤖 AI Recommendations – Personalized monastery and tourism suggestions.
 
-🛠 Tech Stack
-Framework: Next.js
+📚 Educational Resources – Digital archives for students & researchers.
 
-Styling: Tailwind CSS
+🛠️ Tech Stack
 
-Language: TypeScript
+Frontend: React.js, Next.js, TailwindCSS
 
-Icons: React Icons
+Backend: Node.js, Express.js
 
-📂 Folder Structure
-foodDeliveryAppProject/
-├── app/               # Next.js App Router pages
-├── components/        # Reusable UI components
-├── public/            # Static images & assets
-├── styles/            # Global styles
-├── package.json       # Dependencies & scripts
-└── README.md          # Project documentation
-⚡ Getting Started
+Database: MongoDB / PostgreSQL
+
+AR/VR: Unity 3D, WebXR
+
+Cloud: AWS / Azure
+
+📂 Project Structure
+project1/
+ ┣ public/                # Images & monastery assets
+ ┣ src/app/               # Main Next.js app pages
+ ┣ src/components/        # Reusable UI components
+ ┣ prisma/                # Database schema
+ ┣ .env                   # Environment variables
+ ┣ package.json           # Dependencies
+ ┗ README.md              # Project documentation
+⚡ Installation & Setup
+
 Clone the repository:
-git clone https://github.com/your-username/foodDeliveryAppProject.git
-cd foodDeliveryAppProject
+git clone https://github.com/satyajeetparmar0/sihProject.git
+cd sihProject
 Install dependencies:
 npm install
-# or
-yarn install
+Setup environment variables in .env.
+
 Run the development server:
 npm run dev
-# or
-yarn dev
-Open in your browser:
-http://localhost:3000
 
-📌 Future Improvements
-🔗 Integrate with backend API (Node.js/Express or Next.js API routes)
+Open http://localhost:3000
+ in your browser.
 
-💾 Store menu and cart data in a database (MongoDB/PostgreSQL)
+📊 Fund Utilization (If Supported)
 
-🔑 Add user authentication (NextAuth/JWT)
+Data Collection & Digitization: 30%
 
-💳 Payment gateway integration (Stripe/Razorpay)
+Technology Development (Web + AR/VR): 40%
+
+Tourism Integration & Marketing: 15%
+
+Training & Capacity Building: 10%
+
+Testing & Deployment: 5%
+
+🌍 Impact & Benefits
+
+🎯 Promotes Sikkim as a global spiritual tourism destination.
+
+🏯 Preserves cultural and religious heritage for future generations.
+
+💼 Boosts local economy through tourism.
+
+📖 Provides educational value for students, researchers, and travelers.
+
+📖 References
+
+Government of Sikkim cultural department reports
+
+UNESCO heritage preservation guidelines
+
+Ministry of Tourism India data & reports
+
+Case studies on AR/VR in cultural preservation
